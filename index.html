@@ -639,8 +639,9 @@
       g.textBaseline = 'middle';
       g.fillStyle = '#fff';                     // 只看"有没有画到"，颜色无所谓
 
-      // 只有一行字 —— 放在爱心最宽的位置，可以放大很多
-      const mainFs = heartW * 0.74 / TXT_MAIN.length;
+      // 只有一行字 —— 放在爱心最宽的位置
+      // 0.62 是配合「黑体/雅黑」这类宽字形调出来的：字完整在心内，不会撞到心形线条
+      const mainFs = heartW * 0.62 / TXT_MAIN.length;
       const mainY  = CY - heartH * 0.05;
 
       // ⚠️ 关键：这些坐标是"整屏像素"，但画布被缩小了 S 倍，所以要除以 S
